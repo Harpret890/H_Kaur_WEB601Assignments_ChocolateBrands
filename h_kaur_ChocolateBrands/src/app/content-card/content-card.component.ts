@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.scss']
 })
-export class ContentCardComponent {
-
+export class ContentList {
+  contentItem = {
+    Id: 1,
+    body: 'This is the body of the content',
+    type: 'news'
+  };
 }
