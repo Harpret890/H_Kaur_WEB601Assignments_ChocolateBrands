@@ -1,6 +1,8 @@
-<p>content-list works!</p>
-<span class="name">{{contentList.Name}}</span>
-<span class="body">{{contentList.Body}}</span>
-<span class="type">{{contentList.Type}}</span>
-<span class="brand">{{contentList.Brand}}</span>
-<span class="color">{{contentList.Color}}</span>
+<div *ngFor="contentsList">
+    <div>
+        <h2 [innerHTML]="content.title"></h2>
+        <p [innerHTML]="content.description"></p>
+        <p [innerHTML]="content.creator"></p>
+        <img src="{{content.imgURL}}">
+    </div>
+</div>
