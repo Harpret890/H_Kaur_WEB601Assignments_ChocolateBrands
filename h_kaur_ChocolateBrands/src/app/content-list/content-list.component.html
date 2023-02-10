@@ -1,8 +1,19 @@
-<div *ngFor="contentsList">
-    <div>
-        <h2 [innerHTML]="content.title"></h2>
-        <p [innerHTML]="content.description"></p>
-        <p [innerHTML]="content.creator"></p>
-        <img src="{{content.imgURL}}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div *ngFor="let Content of contentsList;">
+    <div id="list">
+        <h2 [innerHTML]="Content.title"></h2>
+        <p [innerHTML]="Content.description"></p>
+        <p [innerHTML]="Content.creator"></p>
+        <img src="{{Content.imgURL}}">
     </div>
 </div>
+</body>
+</html>
