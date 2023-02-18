@@ -8,6 +8,13 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent {
   contentsList: Content[];
+  Title: string = '';
+  ifTitleExists : boolean | null = null;
+
+  searchByTitle(){
+    this.ifTitleExists = this.contentsList.some(content => content.title === this.Title);
+  }
+
   constructor(){
     this.contentsList = [
     {
