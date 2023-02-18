@@ -7,13 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div *ngFor="let content of contentsList">
-    <div id="list">
-        <h2 [innerHTML]="content.title"></h2>
-        <p [innerHTML]="content.description"></p>
-        <p [innerHTML]="content.creator"></p>
-        <img src="{{content.imgURL}}">
+    <input type="text" [(ngModel)]="Title" />
+    <button (click)="searchByTitle()">Search</button>
+
+    <div *ngIf="ifTitleExists !== null">
+        {{ ifTitleExists ? 'Tiitle Found ' : 'No Title Found'}}
     </div>
-</div>
+    <div *ngFor="let content of contentsList">
+        <div id="list">
+            <h2 [innerHTML]="content.title"></h2>
+            <p [innerHTML]="content.description"></p>
+            <p [innerHTML]="content.creator"></p>
+            <img src="{{content.imgURL}}">
+            </div>
+    </div>
+
 </body>
 </html>
