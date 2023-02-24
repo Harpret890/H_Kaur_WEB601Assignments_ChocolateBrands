@@ -8,19 +8,33 @@
 </head>
 <body>
     <input type="text" [(ngModel)]="Title" />
-    <button (click)="searchByTitle()">Search</button>
+    <button onclick='searchByTitle()'>Search</button>
 
-    <div *ngIf="ifTitleExists !== null">
+    <!-- <div *ngIf="ifTitleExists !== null">
         {{ ifTitleExists ? 'Tiitle Found ' : 'No Title Found'}}
-    </div>
-    <div *ngFor="let content of contentsList">
-        <div id="list">
+    </div> -->
+    <div>
+        <h1> Type Chocolate </h1>
+        <div *ngFor="let content of contentsList | contentsList:chocolate">
+            <div id="list">
             <h2 [innerHTML]="content.title"></h2>
             <p [innerHTML]="content.description"></p>
             <p [innerHTML]="content.creator"></p>
             <img src="{{content.imgURL}}">
             </div>
+        </div>
     </div>
-
+    
+    <div>
+        <h1> Milk chocolate </h1>
+        <div *ngFor="let content of contentsList | contentsList:milk chocolate">
+            <div id="list">
+            <h2 [innerHTML]="content.title"></h2>
+            <p [innerHTML]="content.description"></p>
+            <p [innerHTML]="content.creator"></p>
+            <img src="content.imgURL">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

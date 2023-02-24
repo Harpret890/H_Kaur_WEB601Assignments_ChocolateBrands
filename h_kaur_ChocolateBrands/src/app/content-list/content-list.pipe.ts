@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Pipe({ 
-    name: 'contentList' 
+    name: 'contentsList' 
 })
 
 export class ContentListPipe implements PipeTransform {
