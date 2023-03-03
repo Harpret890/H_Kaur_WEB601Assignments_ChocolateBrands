@@ -15,7 +15,7 @@ export class ContentListComponent {
       title: 'Cadbury',
       description: 'The second largest confectionert brand in the worls',
       creator: 'John Cadbury',
-      imgURL: 'https://en.wikipedia.org/wiki/Cadbury'
+      imgURL: 'https://en.wikipedia.org/wiki/Cadbury#/media/File:Cadbury_(2020).svg'
     },
     {
       id: 2,
