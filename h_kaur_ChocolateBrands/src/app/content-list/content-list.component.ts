@@ -43,7 +43,7 @@ export class ContentListComponent {
       title: 'Godiva',
       description: 'Godiva iconic chocolate is a harmonious balance of smooth hazelnut praliné. A traditional recipe that has been passed on by Godivas founders and preciously guarded by our chefs chocolatier.',
       creator: 'Joseph Draps',
-      imgURL: 'https://www.godivachocolates.eu/en/our-story.htm'
+      // imgURL: 'https://www.godivachocolates.eu/en/our-story.htm'
     }
     ]
   }
