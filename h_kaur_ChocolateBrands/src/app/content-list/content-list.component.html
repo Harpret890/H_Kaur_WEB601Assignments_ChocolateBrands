@@ -12,7 +12,17 @@
         <h2 [innerHTML]="content.title"></h2>
         <p [innerHTML]="content.description"></p>
         <p [innerHTML]="content.creator"></p>
-        <img src="{{content.imgURL}}">
+        <!-- <img src="{{content.imgURL}}"> -->
+        <p [innerHTML]="content.type" appHovereffects [styleOnHover]='underline'></p>
+        <div>
+            <span *ngFor="let tag of content.tags" appHovereffects [styleOnTags]="'bold'">{{ tag }} </span>
+        </div>
+        <div *ngIf="content.imgURL; else noImage">
+            <img [src]="content.imgURL" (click)="logId(content)">
+        </div>
+        <ng-template #noImage>
+            <img width="250px" src="https://www.thespruceeats.com/thmb/FhHcgQni8lgV0griUeDJMTAszxI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chocolate_hero1-d62e5444a8734f8d8fe91f5631d51ca5.jpg">
+        </ng-template>
     </div>
 </div>
 </body>
