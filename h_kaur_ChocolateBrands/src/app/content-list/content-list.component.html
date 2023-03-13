@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <app-create-content (onCreation)="addContent($event)"></app-create-content>
+   
+    <!-- eroor list  -->
+    <p *ngIf="errorTxt">Failed to add Content</p>
     <div *ngFor="let content of contentsList">
     <div id="list">
         <h2 [innerHTML]="content.title"></h2>
