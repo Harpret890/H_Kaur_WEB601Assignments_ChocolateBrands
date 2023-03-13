@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input} from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -8,6 +8,12 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent {
   contentsList: Content[];
+
+  addContent(newContent: Content){
+    this.contentsList.push(newContent);
+    this.contentsList = [...this.contentsList];
+    console.log(`Content Added successfully, Title: ${newContent.title}`);
+  }
   constructor(){
     this.contentsList = [
     {
