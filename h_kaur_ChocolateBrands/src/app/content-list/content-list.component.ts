@@ -8,11 +8,22 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent {
   contentsList: Content[];
+   searchTitle: string = '';
+   isTitleExist: boolean | null = null;
+   errorText: boolean = false;
 
   addContent(newContent: Content){
+    const AddPromise = new Promise((resolve, reject) => {
     this.contentsList.push(newContent);
     this.contentsList = [...this.contentsList];
     console.log(`Content Added successfully, Title: ${newContent.title}`);
+    });
+    AddPromise.then(data => {
+      console.log(`Content Added successfully with title: ${data}`);
+      this.errorText = false;
+    }).catch(err => {
+      this.errorText = true;
+    });
   }
   constructor(){
     this.contentsList = [
