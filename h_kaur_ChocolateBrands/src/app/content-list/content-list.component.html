@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <app-create-content (onCreation)="addContent($event)"></app-create-content>
     <div *ngFor="let content of contentsList">
     <div id="list">
         <h2 [innerHTML]="content.title"></h2>
