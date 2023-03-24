@@ -8,6 +8,7 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ModifyContentComponentComponent {
   contentsList: any;
+  id: null | undefined;
   addContentToList(newContentItem: Content): void {
     this.contentsList.addContent(newContentItem)
     .subscribe((newContentFromServer: any) =>
