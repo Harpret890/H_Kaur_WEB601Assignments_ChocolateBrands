@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { contentsList } from '../helper-files/contentDb';
 import { Content } from '../helper-files/content-interface';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,12 +10,17 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentService {
 
-  constructor() {}
-    getContent() : Observable<Content[]>{
-      return of(contentsList)
-      }
-      getContentById(id: number): Observable<any> {
-        const content = contentsList.find(c => c.id === id);
-        return of(content);
-      }
+  constructor(private http: HttpClient) { }
+
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type':'application/json' })
+    };
+
+  getContent() : Observable<Content[]>{
+    return this.http.get<Content[]>("api/content");
+  }
+
+  addContent(newContentItem: Content): Observable<Content>{
+    return this.http.post<Content>("api/content", newContentItem, this.httpOptions);
+  }
 }
