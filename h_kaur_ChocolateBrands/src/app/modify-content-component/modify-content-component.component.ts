@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-modify-content-component',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./modify-content-component.component.scss']
 })
 export class ModifyContentComponentComponent {
-
+  contentsList: any;
+  addContentToList(newContentItem: Content): void {
+    this.contentsList.addContent(newContentItem)
+    .subscribe((newContentFromServer: any) =>
+    this.contentsList.push(newContentFromServer)
+    );
+  }
 }

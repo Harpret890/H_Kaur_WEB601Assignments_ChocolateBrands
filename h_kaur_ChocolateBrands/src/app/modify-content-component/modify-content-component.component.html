@@ -1,1 +1,10 @@
-<p>modify-content-component works!</p>
+<!-- <p>modify-content-component works!</p> -->
+
+<div>
+    <p> Title : <input type="text" [(ngModel)]="newContent.title"></p>
+    <p> Description : <input type="text" [(ngModel)]="newContent.description"></p>
+    <p> Creator : <input type="text" [(ngModel)]="newContent.creator"></p>
+    <p> Type : <input type="text" [(ngModel)]="newContent.type"></p>
+
+    <button (click)="addContentToList()">Add Content</button>
+</div>
