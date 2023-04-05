@@ -8,6 +8,7 @@ import { HovereffectsDirective } from './hovereffects.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { AppMessagesComponent } from './app-messages/app-messages.component';
 import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     ModifyContentComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
