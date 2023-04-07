@@ -1,5 +1,4 @@
 <!-- <p>modify-content-component works!</p> -->
-<link href="./modify-content-component.component.scss">
 <div>
     <p> Title : <input type="text" [(ngModel)]="newContent.title"></p>
     <p> Description : <input type="text" [(ngModel)]="newContent.description"></p>
@@ -8,11 +7,19 @@
 
     <button (click)="addContentToList()">Add Content</button> <br><br>
 
-    <section>
-        <div class="example-label">Raised</div>
-        <div class="example-button-row">
-          <button mat-raised-button color="primary">Primary</button>
-        </div>
-      </section>
+    <ol>
+        <li>
+          <mat-form-field appearance="fill">
+            <mat-label>What's your name?</mat-label>
+            <input matInput [(ngModel)]="name">
+          </mat-form-field>
+        </li>
+        <li>
+          <button mat-raised-button (click)="openDialog()">Pick one</button>
+        </li>
+        <li *ngIf="animal">
+          You chose: <i>{{animal}}</i>
+        </li>
+      </ol>
 </div>
 
