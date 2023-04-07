@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-modify-content-component',
