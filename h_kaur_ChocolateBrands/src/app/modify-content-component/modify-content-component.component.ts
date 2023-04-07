@@ -1,20 +1,31 @@
 import { Component, Inject } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-@Component({
-  selector: 'app-modify-content-component',
-  templateUrl: './modify-content-component.component.html',
-  styleUrls: ['./modify-content-component.component.scss']
-})
+
 export interface DialogData {
   animal: string;
   name: string;
 }
 
-export class ModifyContentComponentComponent {
-  animal: string | undefined;
-  name: string | undefined;
+@Component({
+  selector: 'app-modify-content-component',
+  templateUrl: './modify-content-component.component.html',
+  styleUrls: ['./modify-content-component.component.scss']
+})
 
+export class ModifyContentComponentComponent {
+  contentsList: any;
+  id: null | undefined;
+  animal!: string;
+  name!: string;
+
+  // addContentToList(newContentItem: Content): void {
+  //   this.contentsList.addContent(newContentItem)
+  //   .subscribe((newContentFromServer: any) =>
+  //   this.contentsList.push(newContentFromServer)
+  //   );
+
+  
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
@@ -28,7 +39,10 @@ export class ModifyContentComponentComponent {
     });
   }
 }
-
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
 export class DialogOverviewExampleDialog {
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
