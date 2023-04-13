@@ -1,4 +1,15 @@
 <h1>{{title}}</h1>
 <app-heroes></app-heroes>
 <app-messages></app-messages>
+<a routerLink="content" routerLinkActive="active"
+[routerLinkActiveOptions]="{ exact: true }">
+Content List
+</a><br />
+<!-- <a routerLink="content/42" routerLinkActive="active">
+The answer to the universe and everything
+</a><br /> -->
+<a routerLink="pagewillnotbefound"
+routerLinkActive="active">
+Invalid page link
+</a><br />
 <router-outlet></router-outlet>
