@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { DetailedContentComponent } from './detailed-content/detailed-content.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { DetailedContentComponent } from './detailed-content/detailed-content.co
     CreateContentComponent,
     AppMessagesComponent,
     ModifyContentComponentComponent,
-    DetailedContentComponent
+    DetailedContentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
