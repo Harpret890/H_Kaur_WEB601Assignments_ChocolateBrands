@@ -11,6 +11,7 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { DetailedContentComponent } from './detailed-content/detailed-content.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import {MatInputModule} from '@angular/material/input';
     HovereffectsDirective,
     CreateContentComponent,
     AppMessagesComponent,
-    ModifyContentComponentComponent
+    ModifyContentComponentComponent,
+    DetailedContentComponent
   ],
   imports: [
     BrowserModule,
