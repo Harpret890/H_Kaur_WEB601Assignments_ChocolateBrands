@@ -19,21 +19,17 @@ pathMatch: "full"
 , component:
 DetailedContentComponent },
 { path: "**"
-, component: PageNotFoundComponent }
+, component: PageNotFoundComponent },
+{ path: ""
+, component: ContentListComponent },
+{ path: ":id"
+, component: DetailedContentComponent },
+
 
 ];
-ngOnInit(){
-  this.route.paramMap.subscribe(params => {
-    this.id = Number(params.get("id") ?? 0);
-    this.contentService.getContentItem(this.id)
-    .subscribe((c) => {
-    this.content = c;
-    });
-  });
-  }
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
